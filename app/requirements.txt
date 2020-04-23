@@ -1,3 +1,6 @@
+
+All the required dependencies:
+
 pip install flask
 pip install python-dotenv
 pip install flask-wtf
@@ -5,3 +8,8 @@ pip install flask-sqlalchemy
 pip install flask-migrate
 pip install flask-login
 pip install email_validator
+
+
+Then, execute "flask db init", then "flask db migrate -m 'comment' ", and finally "flask db upgrade"
+
+"flask run" and it should be up and running.
