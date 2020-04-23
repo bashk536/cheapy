@@ -4,10 +4,29 @@
     <h1>Hi, {{ current_user.username }}!</h1>
     
     {% for product in products %}
-    <div><p>{{ product.seller.username }} : {{product.name}}<br>
-        Price: ${{product.price}}<br>
-        In Stock: {{product.quantity}}<br>
-        <u>Description:</u><br>
-        {{product.description }}</p></div>
+    <table class="table table-striped">
+        
+        <tr>
+            <th>Seller</th>
+            <td>{{ product.seller.username }}</td>
+        </tr>
+        <tr>
+            <th>Item</th>
+            <td>{{ product.name }}</td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>${{product.price}}</td>
+        </tr>
+        <tr>
+            <th>In stock</th>
+            <td>{{product.quantity}}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{product.description }}</td>
+        </tr>
+        <hr>
+    </table>
     {% endfor %}
 {% endblock %}
