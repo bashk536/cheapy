@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>Hi, {{ current_user.username }}!</h1>
+    
+    {% for product in products %}
+    <div><p>{{ product.seller.username }} : {{product.name}}<br>
+        Price: ${{product.price}}<br>
+        In Stock: {{product.quantity}}<br>
+        <u>Description:</u><br>
+        {{product.description }}</p></div>
+    {% endfor %}
+{% endblock %}
