@@ -11,6 +11,360 @@ from werkzeug.urls import url_parse
 @login_required
 def index():
     products = Product.query.all()
+
+    products +=  [
+   {
+       'seller': {'username': 'Josh'},
+       'name': 'oven',
+       'price': 200.51,
+       'quantity': 6,
+       'description': 'You can cook things with this'
+   },
+   {
+       'seller': {'username': 'Amazon'},
+       'name': 'Cutting Board',
+       'price': 18.97,
+       'quantity': 20,
+       'description': 'Save your counter and cut food on this'
+   },
+   {
+       'seller': {'username': 'Walmart'},
+       'name': 'Nintendo Switch',
+       'price': 300.00,
+       'quantity': 1,
+       'description': 'Play games on the go'
+   },
+   {
+       'seller': {'username': 'Target'},
+       'name': 'Mug',
+       'price': 7.00,
+       'quantity': 32,
+       'description': 'keep your beverage warm with this mug'
+   },
+   {
+       'seller': {'username': '7-Eleven'},
+       'name': 'cheetos',
+       'price': 1.00,
+       'quantity': 50,
+       'description': 'Snack'
+   },
+   {
+       'seller': {'username': 'Circle K'},
+       'name': 'cheetos',
+       'price': 3.00,
+       'quantity': 20,
+       'description': 'Food'
+   },
+   {
+       'seller': {'username': 'Home Depot'},
+       'name': 'Paint',
+       'price': 21.99,
+       'quantity': 3,
+       'description': 'Save your counter and cut food on this'
+   },
+   {
+       'seller': {'username': 'Gamestop'},
+       'name': 'Nintendo Switch',
+       'price': 299.99,
+       'quantity': 7,
+       'description': 'play video games'
+   },
+   {
+       'seller': {'username': 'Walmart'},
+       'name': 'Nintendo Switch',
+       'price': 300.00,
+       'quantity': 1,
+       'description': 'Save your counter and cut food on this'
+   },
+   {
+       'seller': {'username': 'Walmart'},
+       'name': 'Nintendo Switch',
+       'price': 300.00,
+       'quantity': 1,
+       'description': 'Save your counter and cut food on this'
+   },
+   {
+       'seller': {'username': 'Dollar General'},
+       'name': 'Water',
+       'price': 1.00,
+       'quantity': 63,
+       'description': 'Water'
+   },
+   {
+       'seller': {'username': 'Dollar Tree'},
+       'name': 'Water',
+       'price': 2.00,
+       'quantity': 62,
+       'description': 'Water'
+   },
+   {
+       'seller': {'username': 'Giant Eagle'},
+       'name': 'Chicken',
+       'price': 22.00,
+       'quantity': 42,
+       'description': 'Chicken'
+   },
+   {
+       'seller': {'username': 'ALDI'},
+       'name': 'Chicken',
+       'price': 19.99,
+       'quantity': 1,
+       'description': 'Chicken'
+   },
+   {
+       'seller': {'username': 'Sam'},
+       'name': 'Mask',
+       'price': 5.99,
+       'quantity': 8,
+       'description': 'Mask'
+   },
+   {
+       'seller': {'username': 'May'},
+       'name': 'Mask',
+       'price': 4.99,
+       'quantity': 2,
+       'description': 'Mask'
+   },
+   {
+       'seller': {'username': 'Costco'},
+       'name': 'Milk',
+       'price': 3.99,
+       'quantity': 9,
+       'description':'Milk'
+   },
+   {
+       'seller': {'username': 'Rite Aid'},
+       'name': 'Milk',
+       'price': 7.99,
+       'quantity': 99,
+       'description': 'Milk'
+   },
+   {
+       'seller': {'username': 'Best Buy'},
+       'name': 'Monitor',
+       'price': 212.63,
+       'quantity': 100,
+       'description': 'MSI Monitor'
+   },
+   {
+       'seller': {'username': 'Micro Center'},
+       'name': 'Monitor',
+       'price': 209.62,
+       'quantity': 10,
+       'description': 'MSI Monitor'
+   },
+   {
+       'seller': {'username': 'Newegg'},
+       'name': 'Monitor',
+       'price': 196.60,
+       'quantity': 2,
+       'description': 'MSI Monitor'
+   },
+   {
+       'seller': {'username': 'Nike'},
+       'name': 'Shoes',
+       'price': 99.52,
+       'quantity': 101,
+       'description': 'Shoes'
+   },
+   {
+       'seller': {'username': 'Finish Line'},
+       'name': 'Shoes',
+       'price': 50.52,
+       'quantity': 60,
+       'description': 'Shoes'
+   },
+   {
+       'seller': {'username': 'Adidas'},
+       'name': 'Shoes',
+       'price': 60.51,
+       'quantity': 20,
+       'description': 'Shoes'
+   },
+   {
+       'seller': {'username': 'Skechers'},
+       'name': 'Shoes',
+       'price': 20.00,
+       'quantity': 98,
+       'description': 'Shoes'
+   },
+   {
+       'seller': {'username': 'Microsoft'},
+       'name': 'Surface Pro X',
+       'price': 899.99,
+       'quantity': 2000,
+       'description': '2-in-1 laptop'
+   },
+   {
+       'seller': {'username': 'Microsoft'},
+       'name': 'Surface Pro X',
+       'price': 899.99,
+       'quantity': 2000,
+       'description': '2-in-1 Laptop'
+   },
+   {
+       'seller': {'username': 'Apple'},
+       'name': 'MacBook Air',
+       'price': 999.99,
+       'quantity': 200,
+       'description': 'Laptop'
+   },
+   {
+       'seller': {'username': 'Apple'},
+       'name': 'iPhone SE',
+       'price': 399.99,
+       'quantity': 250,
+       'description': 'Phone'
+   },
+   {
+       'seller': {'username': 'Samsung'},
+       'name': 'Galaxy S20',
+       'price': 1199.99,
+       'quantity': 260,
+       'description': 'Phone'
+   },
+   {
+       'seller': {'username': 'Google'},
+       'name': 'Pixel 4',
+       'price': 499.99,
+       'quantity': 1000,
+       'description': 'Phone'
+   },
+   {
+       'seller': {'username': 'Starbucks'},
+       'name': 'Coffee',
+       'price': 4.99,
+       'quantity': 1000,
+       'description': 'Coffee'
+   },
+   {
+       'seller': {'username': 'Tim Hortons'},
+       'name': 'Coffee',
+       'price': 3.99,
+       'quantity': 10001,
+       'description': 'Coffee'
+   },
+   {
+       'seller': {'username': 'Scribbles Coffee Co'},
+       'name': 'Coffee',
+       'price': 4.00,
+       'quantity': 13,
+       'description': 'Coffee'
+   },
+   {
+       'seller': {'username': 'Bent Tree Coffee'},
+       'name': 'Coffee',
+       'price': 3.00,
+       'quantity': 132,
+       'description': 'Coffee'
+   },
+   {
+       'seller': {'username': 'Sam Ash'},
+       'name': 'Guitar',
+       'price': 200.00,
+       'quantity': 10,
+       'description': 'Guitar'
+   },
+   {
+       'seller': {'username': 'Guitar Center'},
+       'name': 'Guitar',
+       'price': 300.00,
+       'quantity': 13,
+       'description': 'Guitar'
+   },
+   {
+       'seller': {'username': 'Barnes & Noble'},
+       'name': 'Harry Potter',
+       'price': 2.00,
+       'quantity': 13,
+       'description': 'Book'
+   },
+   {
+       'seller': {'username': 'Half Price Books'},
+       'name': 'Harry Potter',
+       'price': 5.00,
+       'quantity': 16,
+       'description': 'Book'
+   },
+   {
+       'seller': {'username': 'American Eagle'},
+       'name': 'Jeans',
+       'price': 35.97,
+       'quantity': 16,
+       'description': 'Pants made of denim'
+   },
+   {
+       'seller': {'username': 'American Eagle'},
+       'name': 'Jeans',
+       'price': 45.27,
+       'quantity': 36,
+       'description': 'Pants made of denim'
+   },
+   {
+       'seller': {'username': 'American Eagle'},
+       'name': 'Jeans',
+       'price': 45.27,
+       'quantity': 36,
+       'description': 'Pants made of denim'
+   },
+   {
+       'seller': {'username': 'Nordstrom'},
+       'name': 'Jeans',
+       'price': 55.27,
+       'quantity': 78,
+       'description': 'Pants made of denim'
+   },
+   {
+       'seller': {'username': 'Nordstrom'},
+       'name': 'Jeans',
+       'price': 62.73,
+       'quantity': 88,
+       'description': 'Pants made of denim'
+   },
+   {
+       'seller': {'username': 'Old Navy'},
+       'name': 'Jeans',
+       'price': 40.00,
+       'quantity': 28,
+       'description': 'Pants made of denim'
+   },
+   {
+       'seller': {'username': 'Old Navy'},
+       'name': 'Jeans',
+       'price': 35.00,
+       'quantity': 68,
+       'description': 'Pants made of denim'
+   },
+   {
+       'seller': {'username': 'Staples'},
+       'name': 'Pens',
+       'price': 6.49,
+       'quantity': 63,
+       'description': 'Gel Pens'
+   },
+   {
+       'seller': {'username': 'Staples'},
+       'name': 'Pens',
+       'price': 6.49,
+       'quantity': 23,
+       'description': 'Fine Point Pens'
+   },
+   {
+       'seller': {'username': 'OfficeMax'},
+       'name': 'Ballpoint Pens',
+       'price': 4.99,
+       'quantity': 43,
+       'description': 'Ballpoint Pens'
+   },
+   {
+       'seller': {'username': 'OfficeMax'},
+       'name': 'Medium Point Pens',
+       'price': 14.49,
+       'quantity': 43,
+       'description': 'Medium Point Pens'
+   }
+]
+
     return render_template('index.html', title='Home', products=products)
 
 
