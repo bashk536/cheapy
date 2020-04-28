@@ -1,5 +1,40 @@
 <html>
     <head>
+        <style>
+            body {
+              margin: 10px;
+              margin-top: 0;
+              font-family: Arial, Helvetica, sans-serif;
+            }
+            
+            .topnav {
+              overflow: hidden;
+              background-color: #333;
+            }
+            
+            .topnav a {
+              float: left;
+              color: #f2f2f2;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+              font-size: 17px;
+            }
+            
+            .topnav a:hover {
+              background-color: #ddd;
+              color: black;
+            }
+            
+            .topnav a.active {
+              background-color: #4CAF50;
+              color: white;
+            }
+            
+            .topnav-right {
+              float: right;
+            }
+        </style>
         {% if title %}
         <title>{{ title }} - Cheapy!</title>
         {% else %}
@@ -7,18 +42,20 @@
         {% endif %}
     </head>
     <body>
-        <div>
-            Cheapy:
-            <a href="{{ url_for('index') }}">Home</a>
-            {% if current_user.is_anonymous %}
-            <a href="{{ url_for('login') }}">Login</a>
-            {% else %}
-            <a href="{{ url_for('sell') }}">Sell</a>
-            <a href="{{ url_for('dashboard') }}">DashBoard</a>
-            <a href="{{ url_for('logout') }}">Logout</a>
-            {% endif %}
+        <div class = 'topnav'>
+            <a href="#">Cheapy</a>
+            <a class="active" href="{{ url_for('index') }}">Home</a>
+            <div class="topnav-right">
+                {% if current_user.is_anonymous %}
+                <a href="{{ url_for('login') }}">Login</a>
+                {% else %}
+                <a href="{{ url_for('sell') }}">Sell</a>
+                <a href="{{ url_for('dashboard') }}">DashBoard</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+                {% endif %}
+            </div>
         </div>
-        <hr>
+        
         {% with messages = get_flashed_messages() %}
         {% if messages %}
         <ul>
