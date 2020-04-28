@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Hi, {{ current_user.username }}!</h1>
+    <h2>Hi, {{ current_user.firstName }}!</h2>
     
     {% for product in products %}
     <table class="table table-striped">
@@ -29,4 +29,5 @@
         <hr>
     </table>
     {% endfor %}
+    <hr>
 {% endblock %}

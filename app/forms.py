@@ -13,7 +13,7 @@ class LoginForm(FlaskForm):
 class RegistrationForm(FlaskForm):
     firstName = StringField('First Name', validators=[DataRequired()])
     lastName = StringField('Last Name', validators=[DataRequired()])
-    dob  = DateTimeField('Your Birthday', format='%\d/%m/%y',validators=[DataRequired()])
+    dob  = DateTimeField('Your Birthday', format='%m-%d-%y',validators=[DataRequired()])
     username = StringField('Username', validators=[DataRequired()])
     email = StringField('Email', validators=[DataRequired(), Email()])
     password = PasswordField('Password', validators=[DataRequired()])
@@ -37,3 +37,10 @@ class PostProductForm(FlaskForm):
     quantity = StringField('Qty', validators=[DataRequired()])
     description = TextAreaField('Description', validators=[Length(min=1, max=400)])
     submit = SubmitField('Submit')
+
+class UpdateProductForm(FlaskForm):
+    name = StringField('Title', validators=[DataRequired()])
+    price = StringField('Price', validators=[DataRequired()])
+    quantity = StringField('Qty', validators=[DataRequired()])
+    description = TextAreaField('Description', validators=[Length(min=1, max=400)])
+    submit = SubmitField('Update')

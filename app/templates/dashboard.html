@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <h1>Your Products for Sale</h1>
+    <h2>Your Products for Sale</h2>
 
     {% for product in products %}
     <table class="table table-striped">
@@ -27,12 +27,13 @@
             <td>{{product.description }}</td>
         </tr>
         <tr>
-            <th><form action="{{url_for('delete', id=product.id)}}" method="post">
-                <input type="hidden" name="_method" value="DELETE">
+            
+            <th> <form action="{{url_for('edit', product_id=product.id)}}" method="post">
+                <input type="hidden" name="_method" value="EDIT">
                 <input type="submit" value="Edit" class="btn btn-default pull-right">
               </form>
             </th>
-            <td><form action="{{url_for('delete', id=product.id)}}" method="post">
+            <td><form action="{{url_for('delete', product_id=product.id)}}" method="post">
                 <input type="hidden" name="_method" value="DELETE">
                 <input type="submit" value="Delete" class="btn btn-danger">
               </form>
